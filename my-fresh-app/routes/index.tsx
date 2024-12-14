@@ -1,3 +1,5 @@
+// This is the main page, accessible at: https://beamcampus.com/
+
 import { useSignal } from "@preact/signals";
 import Counter from "../islands/Counter.tsx";
 

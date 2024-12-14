@@ -1,3 +1,7 @@
+// This is a special error page that shows when accessing non-existent URLs
+// Example: https://beamcampus.com/non-existent-page
+// Like _app.tsx, the underscore prefix means it's a special file
+
 import { Head } from "$fresh/runtime.ts";
 
 export default function Error404() {
