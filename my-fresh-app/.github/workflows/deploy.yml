@@ -1,0 +1,33 @@
+name: Deploy to Deno Deploy
+
+on:
+  push:
+    branches:
+      - main  # or your primary branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🔄 Checkout
+        uses: actions/checkout@v3
+
+      - name: 🦕 Setup Deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+
+      - name: 🛠 Install Tailwind CLI
+        run: deno install -A -f -n tailwindcss https://deno.land/x/tailwindcss@v3.4.1/cli.ts
+
+      - name: 🧱 Build Tailwind Output
+        run: deno run -A build.ts
+
+      - name: 🚀 Deploy to Deno Deploy
+        uses: denoland/deployctl@v1
+        with:
+          project: newo
+          entrypoint: main.ts
+          root: .
+        env:
+          DENO_DEPLOY_TOKEN: ${{ secrets.ddp_yoUF25zDvHwanCgF06p1dgmoYlnV8l11Go13 }}
