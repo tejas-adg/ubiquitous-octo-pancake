@@ -30,7 +30,7 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "newo"
-          entrypoint: "my-fresh-app/index.tsx"
+          entrypoint: "main.ts"
           root: "."
           
           
