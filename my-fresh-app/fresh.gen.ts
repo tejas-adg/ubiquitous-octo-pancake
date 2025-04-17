@@ -5,13 +5,11 @@
 import * as $_404 from "./routes/_404.tsx";
 import * as $_500 from "./routes/_500.tsx";
 import * as $_app from "./routes/_app.tsx";
-import * as $_middleware from "./routes/_middleware.ts";
 import * as $api_joke from "./routes/api/joke.ts";
 import * as $blog_layout from "./routes/blog/_layout.tsx";
 import * as $greet_firstName_lastName_ from "./routes/greet/[firstName]/[lastName].tsx";
 import * as $greet_name_ from "./routes/greet/[name].tsx";
 import * as $index from "./routes/index.tsx";
-import * as $joke from "./routes/joke.tsx";
 import * as $profile_name_ from "./routes/profile/[[name]].tsx";
 import * as $user_name_ from "./routes/user/[name].tsx";
 import * as $Counter from "./islands/Counter.tsx";
@@ -22,13 +20,11 @@ const manifest = {
     "./routes/_404.tsx": $_404,
     "./routes/_500.tsx": $_500,
     "./routes/_app.tsx": $_app,
-    "./routes/_middleware.ts": $_middleware,
     "./routes/api/joke.ts": $api_joke,
     "./routes/blog/_layout.tsx": $blog_layout,
     "./routes/greet/[firstName]/[lastName].tsx": $greet_firstName_lastName_,
     "./routes/greet/[name].tsx": $greet_name_,
     "./routes/index.tsx": $index,
-    "./routes/joke.tsx": $joke,
     "./routes/profile/[[name]].tsx": $profile_name_,
     "./routes/user/[name].tsx": $user_name_,
   },
