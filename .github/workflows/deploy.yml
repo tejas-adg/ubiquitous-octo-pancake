@@ -39,6 +39,6 @@ jobs:
         with:
           project: "newo"
           entrypoint: "main.ts"
-          root: "ubiquitous-octo-pancake"
+          root: ""
           
           
