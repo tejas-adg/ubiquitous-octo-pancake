@@ -3,11 +3,16 @@ name: Deploy to Deno Deploy
 on:
   push:
     branches:
-      - main  # or your primary branch
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ubiquitous-octo-pancake
+
     steps:
       - name: 🔄 Checkout
         uses: actions/checkout@v3
@@ -17,17 +22,22 @@ jobs:
         with:
           deno-version: v1.x
 
-      - name: 🛠 Install Tailwind CLI
-        run: deno install -A -f -n tailwindcss https://deno.land/x/tailwindcss@v3.4.1/cli.ts
+      - name: 📦 Setup Node.js (Tailwind via npx recommended)
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: 📥 Install Tailwind & deps
+        run: npm install --no-save tailwindcss postcss autoprefixer
 
       - name: 🧱 Build Tailwind Output
-        run: deno run -A build.ts
+        run: npx tailwindcss -i ./styles/main.css -o ./static/styles.css
 
       - name: 🚀 Deploy to Deno Deploy
         uses: denoland/deployctl@v1
         with:
           project: newo
           entrypoint: main.ts
-          root: .
+          root: ubiquitous-octo-pancake
         env:
           DENO_DEPLOY_TOKEN: ${{ secrets.ddp_yoUF25zDvHwanCgF06p1dgmoYlnV8l11Go13 }}
