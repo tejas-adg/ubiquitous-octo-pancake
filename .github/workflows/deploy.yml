@@ -23,14 +23,22 @@ jobs:
         with:
           deno-version: v2.x
 
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+
+      - name: Install step
+        run: "npm install --no-save tailwindcss postcss autoprefixer"
+
       - name: Build step
-        run: "cd my-fresh-app && ls -ltr && deno task build"
+        run: "npx tailwindcss -i ./styles/main.css -o ./static/styles.css"
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
           project: "newo"
           entrypoint: "main.ts"
-          root: "."
+          root: ""
           
           
