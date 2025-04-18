@@ -31,6 +31,6 @@ jobs:
         with:
           project: "newo"
           entrypoint: "main.ts"
-          root: "my-fresh-app/"
+          root: ""
           
           
