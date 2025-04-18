@@ -12,6 +12,7 @@ import * as $greet_name_ from "./routes/greet/[name].tsx";
 import * as $index from "./routes/index.tsx";
 import * as $profile_name_ from "./routes/profile/[[name]].tsx";
 import * as $user_name_ from "./routes/user/[name].tsx";
+import * as $BannerScroll from "./islands/BannerScroll.tsx";
 import * as $Counter from "./islands/Counter.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
@@ -29,6 +30,7 @@ const manifest = {
     "./routes/user/[name].tsx": $user_name_,
   },
   islands: {
+    "./islands/BannerScroll.tsx": $BannerScroll,
     "./islands/Counter.tsx": $Counter,
   },
   baseUrl: import.meta.url,
