@@ -4,11 +4,11 @@
     "check": "deno fmt --check && deno lint && deno check **/*.ts && deno check **/*.tsx",
     "cli": "echo \"import '$fresh/src/dev/cli.ts'\" | deno run --unstable -A -",
     "manifest": "deno task cli manifest $(pwd)",
-    "tailwind": "deno run -A npm:tailwindcss -i ./styles/main.css -o ./static/styles.css --minify",
-    "start": "deno run -A --watch=static/,routes/ dev.ts",
-    "build": "deno task tailwind && deno run -A dev.ts build",
-    "preview": "deno run -A main.ts",
-    "update": "deno run -A -r https://fresh.deno.dev/update ."
+    "tailwind": "deno run -A npm:tailwindcss -i ./my-fresh-app/static/main.css -o ./my-fresh-app/static/styles.css --minify",
+    "start": "deno run -A --watch=static/,routes/ my-fresh-app/dev.ts",
+    "build": "deno task tailwind && deno run -A my-fresh-app/dev.ts build",
+    "preview": "deno run -A my-fresh-app/main.ts",
+    "update": "deno run -A -r https://fresh.deno.dev/update ./my-fresh-app"
   },
   "lint": {
     "rules": {
@@ -43,6 +43,6 @@
       "**/node_modules"
     ],
     "include": [],
-    "entrypoint": "main.ts"
+    "entrypoint": "my-fresh-app/main.ts"
   }
 }
