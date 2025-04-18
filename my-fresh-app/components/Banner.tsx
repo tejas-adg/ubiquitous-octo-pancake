@@ -13,8 +13,8 @@ export default function Layout({ children }: LayoutProps) {
 
       {/* ---------- SCROLLING BANNER ---------- */}
       <div class="pointer-events-none fixed bottom-0 left-0 w-full h-142 bg-transparent">
-        <div class="pointer-events-none fixed bottom-0 left-0 w-full h-32" />
-        <p class="relative whitespace-nowrap font-funnel font-bold text-white text-6xl animate-marquee leading-[20rem]">
+        <div class="pointer-events-none fixed bottom-0 left-0 w-full bg-transparent z-50">
+        <p class="whitespace-nowrap font-funnel font-bold text-white text-8xl animate-marquee leading-[10rem]">
           {roll}
         </p>
       </div>
