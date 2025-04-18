@@ -4,7 +4,7 @@
     "check": "deno fmt --check && deno lint && deno check **/*.ts && deno check **/*.tsx",
     "cli": "echo \"import '$fresh/src/dev/cli.ts'\" | deno run --unstable -A -",
     "manifest": "deno task cli manifest $(pwd)",
-    "tailwind": "deno run -A npm:tailwindcss -i ./my-fresh-app/static/main.css -o ./my-fresh-app/static/styles.css --minify",
+    "tailwind": "deno run -A npm:tailwindcss -i ./static/main.css -o ./static/styles.css --minify",
     "start": "deno run -A --watch=static/,routes/ my-fresh-app/dev.ts",
     "build": "deno task tailwind && deno run -A my-fresh-app/dev.ts build",
     "preview": "deno run -A my-fresh-app/main.ts",
