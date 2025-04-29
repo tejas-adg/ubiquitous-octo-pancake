@@ -7,13 +7,25 @@ import * as $_500 from "./routes/_500.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $api_joke from "./routes/api/joke.ts";
 import * as $blog_layout from "./routes/blog/_layout.tsx";
+import * as $chronicle from "./routes/chronicle.tsx";
+import * as $grace from "./routes/grace.tsx";
 import * as $greet_firstName_lastName_ from "./routes/greet/[firstName]/[lastName].tsx";
 import * as $greet_name_ from "./routes/greet/[name].tsx";
 import * as $index from "./routes/index.tsx";
+import * as $kindred from "./routes/kindred.tsx";
+import * as $light from "./routes/light.tsx";
+import * as $nexustx from "./routes/nexustx.tsx";
+import * as $openws from "./routes/openws.tsx";
 import * as $profile_name_ from "./routes/profile/[[name]].tsx";
+import * as $roots from "./routes/roots.tsx";
+import * as $scroll from "./routes/scroll.tsx";
+import * as $tale from "./routes/tale.tsx";
 import * as $user_name_ from "./routes/user/[name].tsx";
+import * as $wallex from "./routes/wallex.tsx";
+import * as $within from "./routes/within.tsx";
 import * as $BannerScroll from "./islands/BannerScroll.tsx";
 import * as $Counter from "./islands/Counter.tsx";
+import * as $PosterBanner from "./islands/PosterBanner.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -23,15 +35,27 @@ const manifest = {
     "./routes/_app.tsx": $_app,
     "./routes/api/joke.ts": $api_joke,
     "./routes/blog/_layout.tsx": $blog_layout,
+    "./routes/chronicle.tsx": $chronicle,
+    "./routes/grace.tsx": $grace,
     "./routes/greet/[firstName]/[lastName].tsx": $greet_firstName_lastName_,
     "./routes/greet/[name].tsx": $greet_name_,
     "./routes/index.tsx": $index,
+    "./routes/kindred.tsx": $kindred,
+    "./routes/light.tsx": $light,
+    "./routes/nexustx.tsx": $nexustx,
+    "./routes/openws.tsx": $openws,
     "./routes/profile/[[name]].tsx": $profile_name_,
+    "./routes/roots.tsx": $roots,
+    "./routes/scroll.tsx": $scroll,
+    "./routes/tale.tsx": $tale,
     "./routes/user/[name].tsx": $user_name_,
+    "./routes/wallex.tsx": $wallex,
+    "./routes/within.tsx": $within,
   },
   islands: {
     "./islands/BannerScroll.tsx": $BannerScroll,
     "./islands/Counter.tsx": $Counter,
+    "./islands/PosterBanner.tsx": $PosterBanner,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;

@@ -46,9 +46,12 @@ export default function HeroGridPage() {
               style={`background-image:url('${image}')`}
             >
               <div class="absolute inset-0 bg-black/40" />
-              <h2 class="absolute inset-0 flex font-redrose items-center justify-center text-white font-bold text-4xl">
+              <a
+                href={`/${title.toLowerCase()}`}
+                class="absolute inset-0 flex font-redrose items-center justify-center text-white font-bold text-4xl hover:underline"
+              >
                 {title}
-              </h2>
+              </a>
             </div>
           ))}
           <BannerScroll />
@@ -61,10 +64,10 @@ export default function HeroGridPage() {
           <div class="flex-col justify-center">
             <div class="grid grid-cols-4 gap-12 text-center text-xl font-redrose max-w-screen-lg mx-auto">
               {menuItems.slice(0, 8).map(({ title, desc }) => (
-                <div>
-                  <h2 class="text-3xl font-bold">{title}</h2>
-                  <p>{desc}</p>
-                </div>
+              <a href={`/${title.toLowerCase()}`} class="hover:underline">
+                <h2 class="text-3xl font-bold">{title}</h2>
+                <p>{desc}</p>
+              </a>
               ))}
             </div>
 
