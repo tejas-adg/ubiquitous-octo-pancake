@@ -28,6 +28,10 @@ export default {
           'rgba(75,0,130,0.25) 30%, ' +
           'rgba(75,0,130,0.5) 40%, ' +
           '#18002A 100%)',
+
+        'indigo-black-fade': 'linear-gradient(to bottom, #18002A 0%, #000000 100%)',
+
+        'black-indigo-fade': 'linear-gradient(to bottom, #000000 0%, #58267D 100%)',
     }
   },
   plugins: [],

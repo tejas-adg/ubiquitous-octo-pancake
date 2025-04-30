@@ -50,8 +50,9 @@ export default function HeroGridPage() {
         <div
           className="min-h-screen bg-cover bg-center bg-[url('/comic.png')] text-white flex items-center justify-center p-12 relative font-redrose"
         >
-          
-            <div className="grid grid-cols-4 grid-rows-3 gap-12 text-center w-1/2 mx-auto">
+          <Rectangle height="75%" width="100%" className=" absolute inset-x-0 top-0 z-0 bg-indigo-black-fade"/>
+          <Rectangle height="25%" width="100%" className=" absolute inset-x-0 bottom-0 z-0 bg-black-indigo-fade"/>
+            <div className="relative z-10 grid grid-cols-4 grid-rows-3 gap-12 text-center w-1/2 mx-auto">
               {menuItems.map(({ title, desc }) => (
               <a href={`/${title.toLowerCase()}`} className="">
                 <h2 className="text-6xl font-bold">{title}</h2>

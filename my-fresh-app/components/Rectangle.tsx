@@ -47,7 +47,7 @@ export default function Rectangle({
 
   return (
     <div
-      className={`rectangle ${className}`}
+      className={`${className}`}
       style={combinedStyle}
       {...props}
     />
