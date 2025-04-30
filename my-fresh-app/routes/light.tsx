@@ -1,5 +1,5 @@
 // LightPage.tsx
-import { h } from "preact";
+//import { h } from "preact";
 import { Head } from "$fresh/runtime.ts";
 import Layout from "../components/Layout.tsx";
 import PosterBanner from "../islands/PosterBanner.tsx";
