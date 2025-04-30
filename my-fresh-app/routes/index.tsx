@@ -1,6 +1,5 @@
-//import { h } from "preact";
-//import Layout from "../components/Layout.tsx";
 import BannerScroll from "../islands/BannerScroll.tsx";
+import Rectangle from "../components/Rectangle.tsx";
 
 export default function HeroGridPage() {
   const sections = [
@@ -31,13 +30,15 @@ export default function HeroGridPage() {
         <div className="h-screen w-full grid grid-cols-3 relative overflow-hidden">
           {sections.map(({ title, image }) => (
             <div
-              className="relative bg-cover bg-center"
+              className="relative bg-cover bg-center "
               style={`background-image:url('${image}')`}
             >
-              <div className="absolute inset-0 bg-black/40" />
+              <Rectangle height="25%" width="100%" color="#4B0082" opacity={35}/>
+              <Rectangle height="50%" width="100%" className=" bg-indigo-fade"/>
+              <Rectangle height="25%" width="100%" color="#18002A" opacity={35}/>
               <a
                 href={`/${title.toLowerCase()}`}
-                className="absolute inset-0 flex font-redrose items-center justify-center text-white font-bold text-4xl"
+                className="absolute inset-0 flex font-redrose items-center justify-center text-white font-bold text-7xl"
               >
                 {title}
               </a>
@@ -60,10 +61,10 @@ export default function HeroGridPage() {
 
             </div>
 
-          <div className="absolute bottom-4 left-4 text-s">
+          <div className="absolute bottom-4 left-4 text-lg">
             © Disruptor LLC, all rights reserved
           </div>
-          <div className="absolute bottom-4 right-4 text-s">
+          <div className="absolute bottom-4 right-4 text-lg">
             Made proudly on Earth, for our World
           </div>
         </div>
