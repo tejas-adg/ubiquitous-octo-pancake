@@ -10,16 +10,18 @@ export default function HeroGridPage() {
   ];
 
   const menuItems = [
-    { title: "Tale", desc: "Our Story" },
-    { title: "Roots", desc: "Where it all began" },
-    { title: "Within", desc: "What we believe in" },
-    { title: "Kindred", desc: "The people behind the Purpose" },
-    { title: "Chronicle", desc: "Moments that shaped us" },
-    { title: "Scroll", desc: "Thoughts, Writings & Dispatches" },
-    { title: "Light", desc: "What guides us" },
-    { title: "Grace", desc: "How we move through the world" },
-    { title: "Covenant", desc: "Our Word, Your Rights" },
-    { title: "Word", desc: "Send us a message" },
+    { title: "Tale", desc: "Our Story" }, // 1
+    { title: "Roots", desc: "Where it all began" }, // 2
+    { title: "Within", desc: "What we believe in" }, // 3
+    { title: "Kindred", desc: "The people behind the Purpose" }, // 4
+    { title: "Chronicle", desc: "Moments that shaped us" }, // 5
+    { title: "Scroll", desc: "Thoughts, Writings & Dispatches" }, // 6
+    { title: "Light", desc: "What guides us" }, // 7
+    { title: "Grace", desc: "How we move through the world" }, // 8
+    { title: "", desc:"" }, // 9
+    { title: "Covenant", desc: "Our Word, Your Rights" }, // 10
+    { title: "Word", desc: "Send us a message" }, // 11
+    { title: "", desc:"" }, // 12
   ];
 
   //const roll = Array(40).fill("New World Order • ").join("");
@@ -45,37 +47,23 @@ export default function HeroGridPage() {
         </div>
 
         <div
-          className="min-h-screen bg-cover bg-center text-white flex items-center justify-center p-12 relative"
-          style="background-image: url('/comic.png');"
+          className="min-h-screen bg-cover bg-center bg-[url('/comic.png')] text-white flex items-center justify-center p-12 relative font-redrose"
         >
-          <div className="flex-col justify-center">
-            <div className="grid grid-cols-4 gap-12 text-center text-xl font-redrose max-w-screen-lg mx-auto">
-              {menuItems.slice(0, 8).map(({ title, desc }) => (
-              <a href={`/${title.toLowerCase()}`} className="hover:underline">
-                <h2 className="text-3xl font-bold">{title}</h2>
-                <p>{desc}</p>
+          
+            <div className="grid grid-cols-4 grid-rows-3 gap-12 text-center w-1/2 mx-auto">
+              {menuItems.map(({ title, desc }) => (
+              <a href={`/${title.toLowerCase()}`} className="">
+                <h2 className="text-6xl font-bold">{title}</h2>
+                <p className="text-xl">{desc}</p>
               </a>
               ))}
+
             </div>
 
-            {/* Spacer */}
-            <div className="h-20" />
-
-            {/* FINAL 2 in centered row */}
-            <div className="flex justify-center gap-12 text-center text-xl font-redrose">
-              {menuItems.slice(8).map(({ title, desc }) => (
-                <div>
-                  <h2 className="text-3xl font-bold">{title}</h2>
-                  <p>{desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="absolute bottom-4 left-4 text-s text-white font-redrose">
+          <div className="absolute bottom-4 left-4 text-s">
             © Disruptor LLC, all rights reserved
           </div>
-          <div className="absolute bottom-4 right-4 text-s text-white font-redrose">
+          <div className="absolute bottom-4 right-4 text-s">
             Made proudly on Earth, for our World
           </div>
         </div>
