@@ -1,5 +1,5 @@
-# ubiquitous-octo-pancake
-The code for the website of BeamCampus
+### ubiquitous-octo-pancake is...
+# The front-end code of NeWO
 
 ## Fresh.js Framework Guide
 

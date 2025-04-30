@@ -23,8 +23,12 @@ export default function App({ Component }: PageProps) {
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>my-fresh-app</title>
         <link rel="stylesheet" href="/styles.css" />
+        <title>New World Order</title>
+        <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@400;700&display=swap" />
+        <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Red+Rose:wght@300..700&display=swap" />
       </head>
       <body>
         <Component />

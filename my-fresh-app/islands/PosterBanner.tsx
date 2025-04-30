@@ -1,4 +1,4 @@
-import { h } from "preact";
+//import { h } from "preact";
 import { useEffect, useRef, useState } from "preact/hooks";
 
 export default function BannerScroll({
@@ -31,8 +31,8 @@ export default function BannerScroll({
     };
 
     resize();
-    window.addEventListener("resize", resize);
-    return () => window.removeEventListener("resize", resize);
+    globalThis.addEventListener("resize", resize);
+    return () => globalThis.removeEventListener("resize", resize);
   }, []);
 
   /** 2️⃣  Figure out how long one lap should take */

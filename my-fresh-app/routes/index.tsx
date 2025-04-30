@@ -1,6 +1,5 @@
-import { h } from "preact";
-import { Head } from "$fresh/runtime.ts";
-import Layout from "../components/Layout.tsx";
+//import { h } from "preact";
+//import Layout from "../components/Layout.tsx";
 import BannerScroll from "../islands/BannerScroll.tsx";
 
 export default function HeroGridPage() {
@@ -23,22 +22,10 @@ export default function HeroGridPage() {
     { title: "Word", desc: "Send us a message" },
   ];
 
-  const roll = Array(40).fill("New World Order • ").join("");
+  //const roll = Array(40).fill("New World Order • ").join("");
 
   return (
     <>
-      <Head>
-        <title>New World Order</title>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Red+Rose:wght@300..700&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
-      <Layout>
         <div class="h-screen w-full grid grid-cols-3 relative overflow-hidden">
           {sections.map(({ title, image }) => (
             <div
@@ -92,7 +79,6 @@ export default function HeroGridPage() {
             Made proudly on Earth, for our World
           </div>
         </div>
-      </Layout>
     </>
   );
 }

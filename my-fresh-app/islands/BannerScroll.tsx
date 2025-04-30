@@ -1,4 +1,4 @@
-import { h } from "preact";
+//import { h } from "preact";
 import { useEffect, useRef, useState } from "preact/hooks";
 
 export default function BannerScroll({
@@ -32,15 +32,15 @@ export default function BannerScroll({
     };
 
     resize();
-    window.addEventListener("resize", resize);
-    return () => window.removeEventListener("resize", resize);
+    globalThis.addEventListener("resize", resize);
+    return () => globalThis.removeEventListener("resize", resize);
   }, []);
 
   // Scroll handler for horizontal animation
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const maxScroll = document.body.scrollHeight - window.innerHeight;
+      const scrollTop = globalThis.scrollY;
+      const maxScroll = document.body.scrollHeight - globalThis.innerHeight;
       const scrollPercent = maxScroll ? scrollTop / maxScroll : 0;
 
       const xOffset = -scrollPercent * 100;
@@ -48,8 +48,8 @@ export default function BannerScroll({
     };
 
     handleScroll(); // Initialize
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    globalThis.addEventListener("scroll", handleScroll);
+    return () => globalThis.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
