@@ -26,16 +26,16 @@ export default function HeroGridPage() {
 
   return (
     <>
-        <div class="h-screen w-full grid grid-cols-3 relative overflow-hidden">
+        <div className="h-screen w-full grid grid-cols-3 relative overflow-hidden">
           {sections.map(({ title, image }) => (
             <div
-              class="relative bg-cover bg-center"
+              className="relative bg-cover bg-center"
               style={`background-image:url('${image}')`}
             >
-              <div class="absolute inset-0 bg-black/40" />
+              <div className="absolute inset-0 bg-black/40" />
               <a
                 href={`/${title.toLowerCase()}`}
-                class="absolute inset-0 flex font-redrose items-center justify-center text-white font-bold text-4xl hover:underline"
+                className="absolute inset-0 flex font-redrose items-center justify-center text-white font-bold text-4xl"
               >
                 {title}
               </a>
@@ -45,37 +45,37 @@ export default function HeroGridPage() {
         </div>
 
         <div
-          class="min-h-screen bg-cover bg-center text-white flex items-center justify-center p-12 relative"
+          className="min-h-screen bg-cover bg-center text-white flex items-center justify-center p-12 relative"
           style="background-image: url('/comic.png');"
         >
-          <div class="flex-col justify-center">
-            <div class="grid grid-cols-4 gap-12 text-center text-xl font-redrose max-w-screen-lg mx-auto">
+          <div className="flex-col justify-center">
+            <div className="grid grid-cols-4 gap-12 text-center text-xl font-redrose max-w-screen-lg mx-auto">
               {menuItems.slice(0, 8).map(({ title, desc }) => (
-              <a href={`/${title.toLowerCase()}`} class="hover:underline">
-                <h2 class="text-3xl font-bold">{title}</h2>
+              <a href={`/${title.toLowerCase()}`} className="hover:underline">
+                <h2 className="text-3xl font-bold">{title}</h2>
                 <p>{desc}</p>
               </a>
               ))}
             </div>
 
             {/* Spacer */}
-            <div class="h-20" />
+            <div className="h-20" />
 
             {/* FINAL 2 in centered row */}
-            <div class="flex justify-center gap-12 text-center text-xl font-redrose">
+            <div className="flex justify-center gap-12 text-center text-xl font-redrose">
               {menuItems.slice(8).map(({ title, desc }) => (
                 <div>
-                  <h2 class="text-3xl font-bold">{title}</h2>
+                  <h2 className="text-3xl font-bold">{title}</h2>
                   <p>{desc}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          <div class="absolute bottom-4 left-4 text-s text-white font-redrose">
+          <div className="absolute bottom-4 left-4 text-s text-white font-redrose">
             © Disruptor LLC, all rights reserved
           </div>
-          <div class="absolute bottom-4 right-4 text-s text-white font-redrose">
+          <div className="absolute bottom-4 right-4 text-s text-white font-redrose">
             Made proudly on Earth, for our World
           </div>
         </div>

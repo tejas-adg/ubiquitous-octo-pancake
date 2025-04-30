@@ -4,7 +4,7 @@ import { PageProps } from "$fresh/server.ts";
 
 export default function BlogLayout({ Component }: PageProps) {
   return (
-    <div class="blog-specific-wrapper">
+    <div className="blog-specific-wrapper">
       <nav>Blog Menu</nav>
       <main>
         <Component /> {/* This is where your blog pages appear */}

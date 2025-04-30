@@ -48,7 +48,7 @@ export default function BannerScroll({
   return (
     <div
       ref={wrapperRef}
-      class="absolute bottom-4 left-0 w-full overflow-hidden pointer-events-none z-50 pb-6 pt-2"
+      className="absolute bottom-4 left-0 w-full overflow-hidden pointer-events-none z-50 pb-6 pt-2"
     >
       {/* 3️⃣  Inline style block so the component is 100 % self-contained */}
       <style>
@@ -68,7 +68,7 @@ export default function BannerScroll({
 
       <p
         ref={bannerRef}
-        class="marquee font-funnel font-normal leading-none m-0 p-0 select-none"
+        className="marquee font-funnel font-normal leading-none m-0 p-0 select-none"
         style={{
           color,
           animationName: "marquee",
@@ -76,8 +76,8 @@ export default function BannerScroll({
         }}
       >
         {/* Two copies, one lap = -50 % */}
-        <span class="mr-8">{text}&nbsp;&nbsp;&nbsp;</span>
-        <span class="mr-8" aria-hidden="true">
+        <span className="mr-8">{text}&nbsp;&nbsp;&nbsp;</span>
+        <span className="mr-8" aria-hidden="true">
           {text}&nbsp;&nbsp;&nbsp;
         </span>
       </p>

@@ -55,11 +55,11 @@ export default function BannerScroll({
   return (
     <div
       ref={wrapperRef}
-      class="absolute bottom-0 left-0 w-full overflow-hidden pointer-events-none z-50"
+      className="absolute bottom-0 left-0 w-full overflow-hidden pointer-events-none z-50"
     >
       <p
         ref={bannerRef}
-        class="whitespace-nowrap font-funnel font-medium leading-none m-0 p-0 select-none"
+        className="whitespace-nowrap font-funnel font-medium leading-none m-0 p-0 select-none"
         style={{
           color,
           transform: `translateX(${scrollX}%)`,
