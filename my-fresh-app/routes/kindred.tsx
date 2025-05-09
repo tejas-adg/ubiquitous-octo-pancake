@@ -22,8 +22,8 @@ export default function KindredPage() {
             <div className="space-y-4 max-w-4xl text-lg md:text-xl leading-relaxed">
               <p>We’re @Tejas, @Tirna, and @Jayant.</p>
               <p>Childhood friends turned co-founders with a shared vision to disrupt the centralized world that holds everything back.</p>
-              <p>Tripas is pursuing his Master's in Computer Science Engineering, bringing backend-level intelligence to the front end of systems.</p>
-              <p>Trifina is a Business and Finance Masters student, shaping strategy, operations, and ecosystem growth.</p>
+              <p>Tirna is pursuing his Master's in Computer Science Engineering, bringing backend-level intelligence to the front end of systems.</p>
+              <p>Tirna is a Business and Finance Masters student, shaping strategy, operations, and ecosystem growth.</p>
               <p>Bound by years of friendship and a mutual drive to challenge the status quo, we’re bound together—and building the future.</p>
             </div>
           </section>
