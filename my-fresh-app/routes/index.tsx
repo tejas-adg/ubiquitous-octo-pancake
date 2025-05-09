@@ -65,15 +65,18 @@ export default function HeroGridPage() {
             ))}
           </div>
           {/* ScrollableList for smaller screens */}
-          <div className="relative z-10 lg:hidden w-full max-w-md mx-auto">
-            <ScrollableList items={scrollableMenuItems} height="70vh" width="100%" className="bg-black bg-opacity-50" />
+          <div className="relative overflow-y-auto overflow-x-hidden h-[70vh] w-full z-10 lg:hidden max-w-md mx-auto">
+            <ScrollableList items={scrollableMenuItems} className="" />
           </div>
 
-          <div className="absolute bottom-4 left-4 text-lg z-10">
-            © Disruptor LLC, all rights reserved
-          </div>
-          <div className="absolute bottom-4 right-4 text-lg z-10">
-            Made proudly on Earth, for our World
+          {/* Footer container */}
+          <div className="absolute bottom-4 left-4 right-4 text-lg z-10 flex flex-col lg:flex-row lg:justify-between items-center">
+            <div className="text-center lg:text-left mb-2 lg:mb-0">
+              © Disruptor LLC, all rights reserved
+            </div>
+            <div className="text-center lg:text-right">
+              Made proudly on Earth, for our World
+            </div>
           </div>
         </div>
     </>
