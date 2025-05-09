@@ -27,12 +27,11 @@ export default function HeroGridPage() {
 
   return (
     <>
-        <div className="h-screen w-full grid grid-cols-3 relative overflow-hidden">
+        <div className="h-screen w-full grid lg:grid-cols-3 relative overflow-hidden">
           {sections.map(({ title, image }) => (
-            <div
-              className="relative bg-cover bg-center "
-              style={`background-image:url('${image}')`}
-            >
+            <div className="relative bg-cover bg-center "
+              style={`background-image:url('${image}')`} >
+
               <Rectangle height="25%" width="100%" color="#4B0082" opacity={35}/>
               <Rectangle height="50%" width="100%" className=" bg-indigo-fade"/>
               <Rectangle height="25%" width="100%" color="#18002A" opacity={35}/>
