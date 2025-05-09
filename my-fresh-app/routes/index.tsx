@@ -1,5 +1,6 @@
 import BannerScroll from "../islands/BannerScroll.tsx";
 import Rectangle from "../components/Rectangle.tsx";
+import ScrollableList from "../components/ScrollableList.tsx"; // Import ScrollableList
 
 export default function HeroGridPage() {
   const sections = [
@@ -22,6 +23,9 @@ export default function HeroGridPage() {
     { title: "Word", desc: "Send us a message" }, // 11
     { title: "", desc:"" }, // 12
   ];
+
+  const scrollableMenuItems = menuItems
+    .filter(item => item.title || item.desc); // Keep as objects, filter out empty items
 
   //const roll = Array(40).fill("New World Order • ").join("");
 
@@ -49,9 +53,10 @@ export default function HeroGridPage() {
         <div
           className="h-screen w-full bg-cover bg-center bg-[url('/comic.png')] text-white flex items-center justify-center p-12 relative font-redrose"
         >
-          <Rectangle height="75%" width="100%" className=" absolute inset-x-0 top-0 z-0 bg-indigo-black-fade"/>
-          <Rectangle height="25%" width="100%" className=" absolute inset-x-0 bottom-0 z-0 bg-black-indigo-fade"/>
-          <div className="relative z-10 grid grid-cols-4 grid-rows-3 gap-6 gap-y-12 xl:gap-12 text-center 2xl:w-4/5 mx-auto">
+          <Rectangle height="75%" width="100%" className="absolute inset-x-0 top-0 z-0 bg-indigo-black-fade"/>
+          <Rectangle height="25%" width="100%" className="absolute inset-x-0 bottom-0 z-0 bg-black-indigo-fade"/>
+          {/* Grid for larger screens */}
+          <div className="relative z-10 hidden lg:grid lg:grid-cols-4 grid-rows-3 gap-6 gap-y-12 xl:gap-12 text-center 2xl:w-4/5 mx-auto">
             {menuItems.map(({ title, desc }) => (
             <a href={`/${title.toLowerCase()}`} className="">
               <h2 className=" text-4xl xl:text-5xl 2xl:text-6xl font-bold">{title}</h2>
@@ -59,11 +64,15 @@ export default function HeroGridPage() {
             </a>
             ))}
           </div>
+          {/* ScrollableList for smaller screens */}
+          <div className="relative z-10 lg:hidden w-full max-w-md mx-auto">
+            <ScrollableList items={scrollableMenuItems} height="70vh" width="100%" className="bg-black bg-opacity-50" />
+          </div>
 
-          <div className="absolute bottom-4 left-4 text-lg">
+          <div className="absolute bottom-4 left-4 text-lg z-10">
             © Disruptor LLC, all rights reserved
           </div>
-          <div className="absolute bottom-4 right-4 text-lg">
+          <div className="absolute bottom-4 right-4 text-lg z-10">
             Made proudly on Earth, for our World
           </div>
         </div>
