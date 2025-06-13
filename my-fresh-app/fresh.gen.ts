@@ -25,6 +25,10 @@ import * as $wallex from "./routes/wallex.tsx";
 import * as $within from "./routes/within.tsx";
 import * as $BannerScroll from "./islands/BannerScroll.tsx";
 import * as $Counter from "./islands/Counter.tsx";
+import * as $DynamicHeader from "./islands/DynamicHeader.tsx";
+import * as $DynamicSubtitle from "./islands/DynamicSubtitle.tsx";
+import * as $DynamicTagline from "./islands/DynamicTagline.tsx";
+import * as $DynamicTitle from "./islands/DynamicTitle.tsx";
 import * as $PosterBanner from "./islands/PosterBanner.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
@@ -55,6 +59,10 @@ const manifest = {
   islands: {
     "./islands/BannerScroll.tsx": $BannerScroll,
     "./islands/Counter.tsx": $Counter,
+    "./islands/DynamicHeader.tsx": $DynamicHeader,
+    "./islands/DynamicSubtitle.tsx": $DynamicSubtitle,
+    "./islands/DynamicTagline.tsx": $DynamicTagline,
+    "./islands/DynamicTitle.tsx": $DynamicTitle,
     "./islands/PosterBanner.tsx": $PosterBanner,
   },
   baseUrl: import.meta.url,

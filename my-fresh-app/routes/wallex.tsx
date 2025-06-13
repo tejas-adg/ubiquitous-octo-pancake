@@ -1,81 +1,67 @@
-//import { h } from "preact";
 import { Head } from "$fresh/runtime.ts";
-import Layout from "../components/Layout.tsx";
-import PosterBanner from "../islands/PosterBanner.tsx";
+import DynamicTitle from "../islands/DynamicTitle.tsx";
+import DynamicTagline from "../islands/DynamicTagline.tsx";
+import DynamicSubtitle from "../islands/DynamicSubtitle.tsx";
+import DynamicHeader from "../islands/DynamicHeader.tsx";
 
 export default function WallExPage() {
+
   return (
     <>
       <Head>
-        <title>WallEX - Next Generation Wallet</title>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap"
-          rel="stylesheet"
-        />
+        <title>WallEX - Finally, crypto that works like money</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
       </Head>
 
-      <Layout>
-        <div className="h-screen w-full grid grid-rows-[75vh_25vh]">
-          <section
-            className="row-span-1 relative bg-cover bg-center text-white flex flex-col items-center justify-center px-6 overflow-hidden"
-            style="background-image:url('/wallex_safe.png');"
-            >
-            <div className="absolute inset-0 bg-gradient-to-b from-[#480082] via-[#440076] to-[#58267D] opacity-25 pointer-events-none"></div>
-            <h1 className="text-5xl md:text-6xl font-redrose font-bold mb-6">
-              WallEX
-            </h1>
+      {/* Dynamic Header */}
+      <DynamicHeader 
+        title="WallEX"
+        onMenuClick={() => console.log("Menu clicked")}
+        onEnterClick={() => console.log("Enter clicked")}
+      />
 
-            <div className="space-y-4 max-w-4xl text-lg md:text-xl leading-relaxed">
-              <p>
-                WallEX is our next-generation crypto wallet built for security,
-                freedom, and seamless peer-to-peer interaction.
-              </p>
-              <p>
-                It’s both a hardware and software solution. The hardware wallet
-                serves permissionless users needing full sovereignty and offline
-                protection—ideal for maximum control and censorship resistance.
-              </p>
-              <p>
-                The software wallet, an intuitive mobile app, offers a secure
-                yet user-friendly experience for permissioned users demanding
-                strong protections.
-              </p>
-              <p>
-                WallEX isn’t just storage—it’s a P2P transaction engine and
-                payment interface, letting you send, receive, and manage money
-                instantly.
-              </p>
-              <p>
-                Hashed-key safety keeps your assets under your control. A
-                built-in exchange enables seamless swaps and trading without
-                leaving the wallet.
-              </p>
-              <p>
-                Whether you’re all-in on decentralisation or just getting
-                started, WallEX is your gateway to secure, sovereign finance.
-              </p>
-            </div>
-          </section>
-
-          {/* ─── Bottom 35 % : white block with banner + footer ── */}
-          <section className="row-span-1 bg-white text-black flex flex-col">
-            {/* Banner takes up space above footer */}
-            <div className="h-[25vh]">
-                <PosterBanner color="black" />
-            </div>
-
-            {/* Footer sticks nicely to bottom */}
-            <footer className="flex justify-between items-end px-6 pb-4 text-xs md:text-sm font-redrose">
-                <span>© Disruptor LLC, all rights reserved</span>
-                <span>Made proudly on Earth, for our World</span>
-            </footer>
-          </section>
+      <div className="min-h-screen w-full relative overflow-hidden bg-black dark:bg-black">
+        {/* Fixed Background */}
+        <div 
+          className="fixed inset-0 bg-cover bg-center bg-no-repeat"
+          style="background-image: url('/wallex_bg.jpg');"
+        />
+        
+        {/* Dark overlay for better text contrast */}
+        <div className="fixed inset-0 bg-black/30" />
+        
+        {/* Content */}
+        <div className="relative z-10 min-h-screen flex flex-col justify-center px-6 lg:px-12 2xl:px-24 text-white" id="wallex-content">
+          {/* Main Logo/Title - Left aligned and dynamically sized */}
+          <div className="mb-8">
+            <DynamicTitle 
+              text="WallEX"
+              targetWidthPercent={0.8}
+              parentSelector="#wallex-content"
+            />
+          </div>
+          
+          {/* Main Tagline - 50% width */}
+          <div className="mb-4">
+            <DynamicTagline 
+              text="Finally, crypto that works like money"
+              targetWidthPercent={0.5}
+              parentSelector="#wallex-content"
+            />
+          </div>
+          
+          {/* Subtitle - 30% width */}
+          <div>
+            <DynamicSubtitle 
+              text="Fast. Familiar. Reliable."
+              targetWidthPercent={0.3}
+              parentSelector="#wallex-content"
+            />
+          </div>
         </div>
-      </Layout>
+      </div>
     </>
   );
 }
