@@ -20,14 +20,19 @@ import * as $profile_name_ from "./routes/profile/[[name]].tsx";
 import * as $roots from "./routes/roots.tsx";
 import * as $scroll from "./routes/scroll.tsx";
 import * as $tale from "./routes/tale.tsx";
+import * as $test_dynamic from "./routes/test-dynamic.tsx";
+import * as $test from "./routes/test.tsx";
 import * as $user_name_ from "./routes/user/[name].tsx";
 import * as $wallex from "./routes/wallex.tsx";
 import * as $within from "./routes/within.tsx";
 import * as $BannerScroll from "./islands/BannerScroll.tsx";
 import * as $Counter from "./islands/Counter.tsx";
+import * as $DinamicTextContainer from "./islands/DinamicTextContainer.tsx";
 import * as $DynamicHeader from "./islands/DynamicHeader.tsx";
+import * as $DynamicParagraph from "./islands/DynamicParagraph.tsx";
 import * as $DynamicSubtitle from "./islands/DynamicSubtitle.tsx";
 import * as $DynamicTagline from "./islands/DynamicTagline.tsx";
+import * as $DynamicTextContainer from "./islands/DynamicTextContainer.tsx";
 import * as $DynamicTitle from "./islands/DynamicTitle.tsx";
 import * as $PosterBanner from "./islands/PosterBanner.tsx";
 import type { Manifest } from "$fresh/server.ts";
@@ -52,6 +57,8 @@ const manifest = {
     "./routes/roots.tsx": $roots,
     "./routes/scroll.tsx": $scroll,
     "./routes/tale.tsx": $tale,
+    "./routes/test-dynamic.tsx": $test_dynamic,
+    "./routes/test.tsx": $test,
     "./routes/user/[name].tsx": $user_name_,
     "./routes/wallex.tsx": $wallex,
     "./routes/within.tsx": $within,
@@ -59,9 +66,12 @@ const manifest = {
   islands: {
     "./islands/BannerScroll.tsx": $BannerScroll,
     "./islands/Counter.tsx": $Counter,
+    "./islands/DinamicTextContainer.tsx": $DinamicTextContainer,
     "./islands/DynamicHeader.tsx": $DynamicHeader,
+    "./islands/DynamicParagraph.tsx": $DynamicParagraph,
     "./islands/DynamicSubtitle.tsx": $DynamicSubtitle,
     "./islands/DynamicTagline.tsx": $DynamicTagline,
+    "./islands/DynamicTextContainer.tsx": $DynamicTextContainer,
     "./islands/DynamicTitle.tsx": $DynamicTitle,
     "./islands/PosterBanner.tsx": $PosterBanner,
   },

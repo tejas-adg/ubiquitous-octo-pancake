@@ -1,5 +1,4 @@
-// TalePage.tsx
-import { h } from "preact";
+// TalePage.tsx 
 import { Head } from "$fresh/runtime.ts";
 import Layout from "../components/Layout.tsx";
 import PosterBanner from "../islands/PosterBanner.tsx";

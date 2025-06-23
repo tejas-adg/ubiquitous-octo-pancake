@@ -37,7 +37,7 @@ export default function HeroGridPage() {
               style={`background-image:url('${image}')`} >
 
               <Rectangle height="25%" width="100%" color="#4B0082" opacity={35}/>
-              <Rectangle height="50%" width="100%" className=" bg-indigo-fade"/>
+              <Rectangle height="50%" width="100%" className="bg-indigo-fade"/>
               <Rectangle height="25%" width="100%" color="#18002A" opacity={35}/>
               <a
                 href={`/${title.toLowerCase()}`}

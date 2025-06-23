@@ -5,26 +5,31 @@ export default function DynamicHeader({
   title = "WallEX",
   onMenuClick,
   onEnterClick,
+  scrollContainerSelector = "#wallex-scroll-container" // NEW PROP
 }: {
   title?: string;
   onMenuClick?: () => void;
   onEnterClick?: () => void;
+  scrollContainerSelector?: string; // NEW
 }) {
   const isScrolled = useSignal(false);
   const headerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    const container = document.querySelector(scrollContainerSelector);
+    if (!container) return;
+
     const handleScroll = () => {
-      const scrollTop = globalThis.scrollY;
+      const scrollTop = (container as HTMLElement).scrollTop;
       const threshold = 80; // 5rem = 80px (assuming 1rem = 16px)
 
       isScrolled.value = scrollTop > threshold;
     };
 
     handleScroll(); // Initialize
-    globalThis.addEventListener("scroll", handleScroll);
-    return () => globalThis.removeEventListener("scroll", handleScroll);
-  }, []);
+    container.addEventListener("scroll", handleScroll);
+    return () => container.removeEventListener("scroll", handleScroll);
+  }, [scrollContainerSelector]);
 
   const MenuIcon = () => (
     <svg
@@ -64,13 +69,13 @@ export default function DynamicHeader({
     <header
       ref={headerRef}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
-        isScrolled.value ? "p-4 md:p-6" : "p-2 md:p-4"
+        isScrolled.value ? "p-6 lg:p-8 xl:p-10 2xl:p-12" : "p-4 lg:p-6 xl:p-8 2xl:p-10"
       }`}
     >
       <div
         className={`flex items-center justify-between transition-all duration-300 ease-in-out ${
           isScrolled.value
-            ? "bg-white text-black rounded-full h-16 px-6 shadow-lg"
+            ? "bg-white text-black rounded-full h-20 px-6 shadow-none"
             : "bg-transparent text-white h-12 px-2"
         }`}
       >
@@ -88,9 +93,9 @@ export default function DynamicHeader({
 
         {/* Title */}
         <div
-          className={`flex-1 text-center transition-all duration-300 ${
+          className={`flex-1 text-center text-3xl lg:text-4xl font-medium transition-all duration-300 ${
             isScrolled.value
-              ? "opacity-100 text-black font-medium text-lg"
+              ? "opacity-100 text-black "
               : "opacity-0 text-transparent"
           }`}
           style={{ fontFamily: "'Funnel Sans', sans-serif" }}
