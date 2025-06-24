@@ -3,7 +3,7 @@ import DynamicTitle from "../islands/DynamicTitle.tsx";
 import DynamicTagline from "../islands/DynamicTagline.tsx";
 import DynamicSubtitle from "../islands/DynamicSubtitle.tsx";
 import DynamicHeader from "../islands/DynamicHeader.tsx";
-import BreakpointIndicator from "../components/BreakpointIndicator.tsx";
+//import BreakpointIndicator from "../components/BreakpointIndicator.tsx";
 
 export default function WallExPage() {
 
@@ -17,7 +17,7 @@ export default function WallExPage() {
       </Head>
 
       {/* Breakpoint Indicator */}
-      <BreakpointIndicator />
+      {/* <BreakpointIndicator /> */}
 
       {/* Dynamic Header */}
       <DynamicHeader 
@@ -101,6 +101,42 @@ export default function WallExPage() {
               </p>
             </div>
             <div id="wallex-about-image" className="lg:w-1/4 flex justify-center">
+              <div className="w-64 h-96 bg-gray-700" />
+            </div>
+          </div>
+        </div>
+        {/* Company Section */}
+        <div id="wallex-company" className="snap-start relative z-20 h-screen px-6 lg:px-12 2xl:px-24 flex flex-col justify-center items-start text-white space-y-8">
+          {/* Company Tagline */}
+          <div>
+            <DynamicTagline
+              text="Built for How You Actually Use Money"
+              targetWidthPercent={0.8}
+              parentSelector="#wallex-company"
+            />
+          </div>
+          {/* Company Subtitle */}
+          <div>
+            <DynamicSubtitle
+              text="Because you don’t ‘invest’ every time you buy coffee."
+              targetWidthPercent={0.5}
+              parentSelector="#wallex-company"
+            />
+          </div>
+          {/* Paragraphs and Image Container */}
+          <div className="w-full flex flex-col lg:flex-row gap-8">
+            <div id="wallex-company-paragraphs" className="lg:w-3/4 space-y-4">
+              <p className="text-white md:text-lg lg:text-xl 2xl:text-2xl">
+                WallEX brings the convenience of apps like Venmo and Cash App to the world of crypto.
+              </p>
+              <p className="text-white md:text-lg lg:text-xl 2xl:text-2xl">
+                You can send, receive, hold, and swap without even thinking about networks or chains.
+              </p>
+              <p className="text-white md:text-lg lg:text-xl 2xl:text-2xl">
+                No steep learning curve. No surprise errors. Just money that moves.
+              </p>
+            </div>
+            <div id="wallex-company-image" className="lg:w-1/4 flex justify-center">
               <div className="w-64 h-96 bg-gray-700" />
             </div>
           </div>
